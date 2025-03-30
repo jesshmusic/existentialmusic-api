@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: teches
+# Table name: technologies
 #
 #  id          :bigint           not null, primary key
 #  description :string

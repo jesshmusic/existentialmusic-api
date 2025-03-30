@@ -2,16 +2,16 @@ require "application_system_test_case"
 
 class DevHomesTest < ApplicationSystemTestCase
   setup do
-    @dev_home = dev_homes(:one)
+    @dev_home = dev_home(:one)
   end
 
   test "visiting the index" do
-    visit dev_homes_url
+    visit dev_home_url
     assert_selector "h1", text: "Dev homes"
   end
 
   test "should create dev home" do
-    visit dev_homes_url
+    visit dev_home_url
     click_on "New dev home"
 
     fill_in "Title", with: @dev_home.title

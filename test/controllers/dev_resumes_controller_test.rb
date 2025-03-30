@@ -2,11 +2,11 @@ require "test_helper"
 
 class DevResumesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @dev_resume = dev_resumes(:one)
+    @dev_resume = dev_resume(:one)
   end
 
   test "should get index" do
-    get dev_resumes_url
+    get dev_resume_url
     assert_response :success
   end
 
@@ -17,7 +17,7 @@ class DevResumesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create dev_resume" do
     assert_difference("DevResume.count") do
-      post dev_resumes_url, params: { dev_resume: { name: @dev_resume.name, title: @dev_resume.title } }
+      post dev_resume_url, params: { dev_resume: { name: @dev_resume.name, title: @dev_resume.title } }
     end
 
     assert_redirected_to dev_resume_url(DevResume.last)
@@ -43,6 +43,6 @@ class DevResumesControllerTest < ActionDispatch::IntegrationTest
       delete dev_resume_url(@dev_resume)
     end
 
-    assert_redirected_to dev_resumes_url
+    assert_redirected_to dev_resume_url
   end
 end

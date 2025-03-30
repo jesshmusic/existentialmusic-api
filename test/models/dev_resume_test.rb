@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: dev_resumes
+# Table name: dev_resume
 #
 #  id         :bigint           not null, primary key
 #  name       :string

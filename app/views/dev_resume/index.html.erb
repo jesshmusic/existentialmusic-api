@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Dev resumes" %>
+
+<h1>Dev resumes</h1>
+
+<div id="dev_resume">
+  <% @dev_resume.each do |dev_resume| %>
+    <%= render dev_resume %>
+    <p>
+      <%= link_to "Show this dev resume", dev_resume %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New dev resume", new_dev_resume_path %>

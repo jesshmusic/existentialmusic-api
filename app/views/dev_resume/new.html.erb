@@ -1,0 +1,11 @@
+<% content_for :title, "New dev resume" %>
+
+<h1>New dev resume</h1>
+
+<%= render "form", dev_resume: @dev_resume %>
+
+<br>
+
+<div>
+  <%= link_to "Back to dev resumes", dev_resume_path %>
+</div>

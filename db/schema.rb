@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_29_213553) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_30_163732) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -60,17 +60,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_29_213553) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "dev_abouts", force: :cascade do |t|
+  create_table "dev_about", force: :cascade do |t|
     t.string "title"
     t.string "subtitle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "singleton_guard", default: true, null: false
+    t.index ["singleton_guard"], name: "index_dev_about_on_singleton_guard", unique: true
   end
 
-  create_table "dev_homes", force: :cascade do |t|
+  create_table "dev_home", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "singleton_guard", default: true, null: false
+    t.index ["singleton_guard"], name: "index_dev_home_on_singleton_guard", unique: true
   end
 
   create_table "dev_projects", force: :cascade do |t|
@@ -83,17 +87,29 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_29_213553) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "dev_resumes", force: :cascade do |t|
+  create_table "dev_resume", force: :cascade do |t|
     t.string "title"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "singleton_guard", default: true, null: false
+    t.index ["singleton_guard"], name: "index_dev_resume_on_singleton_guard", unique: true
   end
 
   create_table "episodes", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.string "company"
+    t.string "role"
+    t.text "description"
+    t.date "start_date"
+    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -109,7 +125,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_29_213553) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "teches", force: :cascade do |t|
+  create_table "technologies", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.datetime "created_at", null: false
@@ -127,16 +143,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_29_213553) do
     t.string "title"
     t.string "url"
     t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "works", force: :cascade do |t|
-    t.string "company"
-    t.string "role"
-    t.text "description"
-    t.date "start_date"
-    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

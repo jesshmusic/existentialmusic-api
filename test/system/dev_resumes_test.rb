@@ -2,16 +2,16 @@ require "application_system_test_case"
 
 class DevResumesTest < ApplicationSystemTestCase
   setup do
-    @dev_resume = dev_resumes(:one)
+    @dev_resume = dev_resume(:one)
   end
 
   test "visiting the index" do
-    visit dev_resumes_url
+    visit dev_resume_url
     assert_selector "h1", text: "Dev resumes"
   end
 
   test "should create dev resume" do
-    visit dev_resumes_url
+    visit dev_resume_url
     click_on "New dev resume"
 
     fill_in "Name", with: @dev_resume.name

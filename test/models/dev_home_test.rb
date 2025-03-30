@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: dev_homes
+# Table name: dev_home
 #
 #  id         :bigint           not null, primary key
 #  title      :string

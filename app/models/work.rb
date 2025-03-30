@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: works
+# Table name: positions
 #
 #  id          :bigint           not null, primary key
 #  company     :string

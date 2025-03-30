@@ -2,16 +2,16 @@ require "application_system_test_case"
 
 class DevAboutsTest < ApplicationSystemTestCase
   setup do
-    @dev_about = dev_abouts(:one)
+    @dev_about = dev_about(:one)
   end
 
   test "visiting the index" do
-    visit dev_abouts_url
+    visit dev_about_url
     assert_selector "h1", text: "Dev abouts"
   end
 
   test "should create dev about" do
-    visit dev_abouts_url
+    visit dev_about_url
     click_on "New dev about"
 
     fill_in "Subtitle", with: @dev_about.subtitle

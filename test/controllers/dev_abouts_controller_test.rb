@@ -2,11 +2,11 @@ require "test_helper"
 
 class DevAboutsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @dev_about = dev_abouts(:one)
+    @dev_about = dev_about(:one)
   end
 
   test "should get index" do
-    get dev_abouts_url
+    get dev_about_url
     assert_response :success
   end
 
@@ -17,7 +17,7 @@ class DevAboutsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create dev_about" do
     assert_difference("DevAbout.count") do
-      post dev_abouts_url, params: { dev_about: { subtitle: @dev_about.subtitle, title: @dev_about.title } }
+      post dev_about_url, params: { dev_about: { subtitle: @dev_about.subtitle, title: @dev_about.title } }
     end
 
     assert_redirected_to dev_about_url(DevAbout.last)
@@ -43,6 +43,6 @@ class DevAboutsControllerTest < ActionDispatch::IntegrationTest
       delete dev_about_url(@dev_about)
     end
 
-    assert_redirected_to dev_abouts_url
+    assert_redirected_to dev_about_url
   end
 end
