@@ -13,8 +13,8 @@ class DevResume < ApplicationRecord
   before_validation :ensure_singleton_guard
 
   has_rich_text :summary
-  has_many :techs
-  has_many :works
+  has_many :technologies
+  has_many :positions
 
   def self.singleton
     first_or_create!

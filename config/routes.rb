@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: "dev_home#show"
 
-  resource :dev_about, only: [:show, :update]
-  resource :dev_home, only: [:show, :update]
-  resource :dev_resume, only: [:show, :update]
+  resource :dev_about, only: [ :show, :update, :edit ]
+  resource :dev_home, only: [ :show, :update, :edit ]
+  resource :dev_resume, only: [ :show, :update, :edit ]
 
   resources :dev_projects
   resources :posts

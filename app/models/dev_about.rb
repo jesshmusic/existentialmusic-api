@@ -13,7 +13,7 @@ class DevAbout < ApplicationRecord
   before_validation :ensure_singleton_guard
 
   has_rich_text :content
-  has_many :techs
+  has_many :technologies
   has_many_attached :gallery
   has_one_attached :thumbnail
 
