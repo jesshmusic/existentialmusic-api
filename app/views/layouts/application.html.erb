@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Existentialmusic Api" %></title>
+    <title><%= content_for(:title) || "ExistentialMusic Api" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -22,9 +22,29 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+  <body class="bg-gray-100 text-gray-900">
+  <nav class="bg-white shadow-md mb-6">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-indigo-600">
+        <a href="/">ExistentialMusic</a>
+      </div>
+      <ul class="flex gap-4 text-sm font-medium">
+        <li><a href="/dev_home" class="hover:text-indigo-600">Home</a></li>
+        <li><a href="/dev_about" class="hover:text-indigo-600">About</a></li>
+        <li><a href="/dev_resume" class="hover:text-indigo-600">Resume</a></li>
+        <li><a href="/dev_projects" class="hover:text-indigo-600">Projects</a></li>
+        <li><a href="/clients" class="hover:text-indigo-600">Clients</a></li>
+        <li><a href="/positions" class="hover:text-indigo-600">Positions</a></li>
+        <li><a href="/technologies" class="hover:text-indigo-600">Technologies</a></li>
+        <li><a href="/videos" class="hover:text-indigo-600">Videos</a></li>
+        <li><a href="/posts" class="hover:text-indigo-600">Posts</a></li>
+        <li><a href="/episodes" class="hover:text-indigo-600">Episodes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-4">
+    <%= yield %>
+  </main>
   </body>
 </html>

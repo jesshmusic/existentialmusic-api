@@ -1,16 +1,46 @@
-<p style="color: green"><%= notice %></p>
-
-<% content_for :title, "Dev projects" %>
-
-<h1>Dev projects</h1>
-
-<div id="dev_projects">
-  <% @dev_projects.each do |dev_project| %>
-    <%= render dev_project %>
-    <p>
-      <%= link_to "Show this dev project", dev_project %>
-    </p>
-  <% end %>
+<h1 class="text-3xl font-bold mb-6">Dev Projects</h1>
+<div class="mb-4">
+  <%= link_to 'New Project', new_dev_project_path, class: 'bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700' %>
 </div>
+<table class="w-full table-auto border-collapse">
+  <thead>
+  <tr class="bg-gray-200 text-left">
+    <th class="p-2">ID</th>
+    <th class="p-2">Title</th>
+    <th class="p-2">Subtitle</th>
+    <th class="p-2">Slug</th>
+    <th class="p-2">Link</th>
+    <th class="p-2">Thumbnail</th>
+    <th class="p-2">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @dev_projects.each do |project| %>
+    <tr class="border-b">
+      <td class="p-2"><%= project.id %></td>
+      <td class="p-2"><%= project.title %></td>
+      <td class="p-2"><%= project.subtitle %></td>
+      <td class="p-2"><%= project.slug %></td>
+      <td class="p-2"><%= link_to project.link, project.link, class: 'text-blue-500 underline' if project.link.present? %></td>
+      <td class="p-2">
+        <% if project.thumbnail.attached? %>
+          <%= image_tag project.thumbnail.variant(resize_to_limit: [100, 100]), class: "rounded" %>
+        <% end %>
+      </td>
+      <td class="p-2 space-x-2">
+        <%= link_to 'Show', dev_project_path(project), class: 'text-indigo-600 hover:underline' %>
+        <%= link_to 'Edit', edit_dev_project_path(project), class: 'text-yellow-600 hover:underline' %>
+        <%= button_to 'Delete',
+                      dev_project_path(project),
+                      method: :delete,
+                      data: {
+                        turbo_confirm: 'Are you sure?',
+                      },
+                      class: 'text-red-600 hover:underline bg-transparent border-none p-0 cursor-pointer' %>
 
-<%= link_to "New dev project", new_dev_project_path %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
