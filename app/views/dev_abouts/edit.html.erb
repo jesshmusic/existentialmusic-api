@@ -1,0 +1,12 @@
+<% content_for :title, "Editing dev about" %>
+
+<h1>Editing dev about</h1>
+
+<%= render "form", dev_about: @dev_about %>
+
+<br>
+
+<div>
+  <%= link_to "Show this dev about", @dev_about %> |
+  <%= link_to "Back to dev abouts", dev_abouts_path %>
+</div>

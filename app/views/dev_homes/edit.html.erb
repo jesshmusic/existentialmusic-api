@@ -1,0 +1,12 @@
+<% content_for :title, "Editing dev home" %>
+
+<h1>Editing dev home</h1>
+
+<%= render "form", dev_home: @dev_home %>
+
+<br>
+
+<div>
+  <%= link_to "Show this dev home", @dev_home %> |
+  <%= link_to "Back to dev homes", dev_homes_path %>
+</div>

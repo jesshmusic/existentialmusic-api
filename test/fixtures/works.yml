@@ -1,0 +1,28 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# == Schema Information
+#
+# Table name: works
+#
+#  id          :bigint           not null, primary key
+#  company     :string
+#  description :text
+#  end_date    :date
+#  role        :string
+#  start_date  :date
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+one:
+  company: MyString
+  role: MyString
+  description: MyText
+  start_date: 2025-03-29
+  end_date: 2025-03-29
+
+two:
+  company: MyString
+  role: MyString
+  description: MyText
+  start_date: 2025-03-29
+  end_date: 2025-03-29
