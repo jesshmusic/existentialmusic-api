@@ -1,12 +1,3 @@
-<% content_for :title, "Editing dev home" %>
-
-<h1>Editing dev home</h1>
-
-<%= render "form", dev_home: @dev_home %>
-
-<br>
-
-<div>
-  <%= link_to "Show this dev home", @dev_home %> |
-  <%= link_to "Back to dev homes", dev_home_path %>
-</div>
+<h1 class="text-3xl font-bold mb-6">Edit Developer Homepage</h1>
+<%= render 'form', dev_home: @dev_home %>
+<%= link_to 'Back', dev_home_path(@dev_home), class: 'text-sm text-indigo-600 hover:underline' %>

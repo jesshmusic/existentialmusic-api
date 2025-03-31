@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_30_163732) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_30_210134) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -58,6 +58,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_30_163732) do
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "dev_home_id", null: false
+    t.index ["dev_home_id"], name: "index_clients_on_dev_home_id"
   end
 
   create_table "dev_about", force: :cascade do |t|
@@ -85,6 +87,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_30_163732) do
     t.text "excerpt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "dev_home_id"
+    t.index ["dev_home_id"], name: "index_dev_projects_on_dev_home_id"
   end
 
   create_table "dev_resume", force: :cascade do |t|
@@ -112,6 +116,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_30_163732) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "dev_resume_id", null: false
+    t.index ["dev_resume_id"], name: "index_positions_on_dev_resume_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -130,6 +136,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_30_163732) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "dev_home_id"
+    t.bigint "dev_about_id"
+    t.bigint "dev_resume_id"
+    t.index ["dev_about_id"], name: "index_technologies_on_dev_about_id"
+    t.index ["dev_home_id"], name: "index_technologies_on_dev_home_id"
+    t.index ["dev_resume_id"], name: "index_technologies_on_dev_resume_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -149,4 +161,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_30_163732) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "clients", "dev_home"
+  add_foreign_key "dev_projects", "dev_home"
+  add_foreign_key "positions", "dev_resume"
+  add_foreign_key "technologies", "dev_about"
+  add_foreign_key "technologies", "dev_home"
+  add_foreign_key "technologies", "dev_resume"
 end

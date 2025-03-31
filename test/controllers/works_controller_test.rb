@@ -16,11 +16,11 @@ class WorksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create work" do
-    assert_difference("Work.count") do
+    assert_difference("Position.count") do
       post works_url, params: { work: { company: @work.company, description: @work.description, end_date: @work.end_date, role: @work.role, start_date: @work.start_date } }
     end
 
-    assert_redirected_to work_url(Work.last)
+    assert_redirected_to work_url(Position.last)
   end
 
   test "should show work" do
@@ -39,7 +39,7 @@ class WorksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy work" do
-    assert_difference("Work.count", -1) do
+    assert_difference("Position.count", -1) do
       delete work_url(@work)
     end
 

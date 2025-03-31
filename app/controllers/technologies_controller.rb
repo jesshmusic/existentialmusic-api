@@ -3,7 +3,7 @@ class TechnologiesController < ApplicationController
 
   # GET /technologies or /technologies.json
   def index
-    @teches = Tech.all
+    @teches = Technology.all
   end
 
   # GET /technologies/1 or /technologies/1.json
@@ -12,7 +12,7 @@ class TechnologiesController < ApplicationController
 
   # GET /technologies/new
   def new
-    @tech = Tech.new
+    @tech = Technology.new
   end
 
   # GET /technologies/1/edit
@@ -21,11 +21,11 @@ class TechnologiesController < ApplicationController
 
   # POST /technologies or /technologies.json
   def create
-    @tech = Tech.new(tech_params)
+    @tech = Technology.new(tech_params)
 
     respond_to do |format|
       if @tech.save
-        format.html { redirect_to @tech, notice: "Tech was successfully created." }
+        format.html { redirect_to @tech, notice: "Technology was successfully created." }
         format.json { render :show, status: :created, location: @tech }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class TechnologiesController < ApplicationController
   def update
     respond_to do |format|
       if @tech.update(tech_params)
-        format.html { redirect_to @tech, notice: "Tech was successfully updated." }
+        format.html { redirect_to @tech, notice: "Technology was successfully updated." }
         format.json { render :show, status: :ok, location: @tech }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class TechnologiesController < ApplicationController
     @tech.destroy!
 
     respond_to do |format|
-      format.html { redirect_to teches_path, status: :see_other, notice: "Tech was successfully destroyed." }
+      format.html { redirect_to teches_path, status: :see_other, notice: "Technology was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -60,7 +60,7 @@ class TechnologiesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tech
-      @tech = Tech.find(params.expect(:id))
+      @tech = Technology.find(params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.

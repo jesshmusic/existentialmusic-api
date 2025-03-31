@@ -19,13 +19,13 @@ class WorksTest < ApplicationSystemTestCase
     fill_in "End date", with: @work.end_date
     fill_in "Role", with: @work.role
     fill_in "Start date", with: @work.start_date
-    click_on "Create Work"
+    click_on "Create Position"
 
-    assert_text "Work was successfully created"
+    assert_text "Position was successfully created"
     click_on "Back"
   end
 
-  test "should update Work" do
+  test "should update Position" do
     visit work_url(@work)
     click_on "Edit this work", match: :first
 
@@ -34,16 +34,16 @@ class WorksTest < ApplicationSystemTestCase
     fill_in "End date", with: @work.end_date
     fill_in "Role", with: @work.role
     fill_in "Start date", with: @work.start_date
-    click_on "Update Work"
+    click_on "Update Position"
 
-    assert_text "Work was successfully updated"
+    assert_text "Position was successfully updated"
     click_on "Back"
   end
 
-  test "should destroy Work" do
+  test "should destroy Position" do
     visit work_url(@work)
     click_on "Destroy this work", match: :first
 
-    assert_text "Work was successfully destroyed"
+    assert_text "Position was successfully destroyed"
   end
 end

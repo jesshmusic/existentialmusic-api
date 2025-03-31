@@ -1,12 +1,14 @@
 class DevHomeController < ApplicationController
-  before_action :set_dev_home, only: %i[ show edit update destroy ]
+  before_action :set_dev_home, only: %i[ show edit update ]
 
   # GET /dev_home or /dev_home.json
   def show
+    puts @dev_home.dev_projects.count
   end
 
   # GET /dev_home/edit
   def edit
+    puts @dev_home.dev_projects.count
   end
 
   # PATCH/PUT /dev_home or /dev_home.json
@@ -19,15 +21,6 @@ class DevHomeController < ApplicationController
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @dev_home.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /dev_home or /dev_home.json
-  def destroy
-    @dev_home.destroy
-    respond_to do |format|
-      format.html { redirect_to root_url, notice: "Dev home was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 

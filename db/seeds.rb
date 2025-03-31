@@ -37,13 +37,13 @@ DevResume.create!(
   HTML
 )
 
-# Tech Stack
+# Technology Stack
 tech_names = %w[
   React.js Next.js React-Native TypeScript JavaScript Ruby-on-Rails Node Express
   SQL HTML CSS SCSS Jest Jasmine React-Testing-Library
 ]
 tech_names.each do |name|
-  Tech.create!(name: name, description: "")
+  Technology.create!(name: name, description: "")
 end
 
 # Clients
@@ -58,8 +58,8 @@ Client.create!(
   description: "Fitness technology company with secure user authentication and interactive features."
 )
 
-# Work Experience
-Work.create!(
+# Position Experience
+Position.create!(
   company: "Hartree Partners",
   role: "Senior Frontend Developer",
   start_date: "2023-01-01",
@@ -67,7 +67,7 @@ Work.create!(
   description: "Built React + TypeScript trading applications, optimized real-time data visualizations, and refactored Grafana-based codebases."
 )
 
-Work.create!(
+Position.create!(
   company: "iFit",
   role: "Full Stack Developer",
   start_date: "2020-12-01",
@@ -75,7 +75,7 @@ Work.create!(
   description: "Developed authentication and payment flows, UX improvements, and real-time analytics using React and TypeScript."
 )
 
-Work.create!(
+Position.create!(
   company: "Common Media, Inc.",
   role: "Front End Developer",
   start_date: "2016-06-01",
@@ -83,7 +83,7 @@ Work.create!(
   description: "Created and maintained full-stack Rails/React sites and React Native apps for iOS/Android."
 )
 
-Work.create!(
+Position.create!(
   company: "Freelance",
   role: "Fullstack Engineer",
   start_date: "2016-05-01",

@@ -16,11 +16,11 @@ class TechesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create tech" do
-    assert_difference("Tech.count") do
+    assert_difference("Technology.count") do
       post teches_url, params: { tech: { description: @tech.description, name: @tech.name } }
     end
 
-    assert_redirected_to tech_url(Tech.last)
+    assert_redirected_to tech_url(Technology.last)
   end
 
   test "should show tech" do
@@ -39,7 +39,7 @@ class TechesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy tech" do
-    assert_difference("Tech.count", -1) do
+    assert_difference("Technology.count", -1) do
       delete tech_url(@tech)
     end
 

@@ -3,7 +3,7 @@ class PositionsController < ApplicationController
 
   # GET /positions or /positions.json
   def index
-    @works = Work.all
+    @works = Position.all
   end
 
   # GET /positions/1 or /positions/1.json
@@ -12,7 +12,7 @@ class PositionsController < ApplicationController
 
   # GET /positions/new
   def new
-    @work = Work.new
+    @work = Position.new
   end
 
   # GET /positions/1/edit
@@ -21,11 +21,11 @@ class PositionsController < ApplicationController
 
   # POST /positions or /positions.json
   def create
-    @work = Work.new(work_params)
+    @work = Position.new(work_params)
 
     respond_to do |format|
       if @work.save
-        format.html { redirect_to @work, notice: "Work was successfully created." }
+        format.html { redirect_to @work, notice: "Position was successfully created." }
         format.json { render :show, status: :created, location: @work }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class PositionsController < ApplicationController
   def update
     respond_to do |format|
       if @work.update(work_params)
-        format.html { redirect_to @work, notice: "Work was successfully updated." }
+        format.html { redirect_to @work, notice: "Position was successfully updated." }
         format.json { render :show, status: :ok, location: @work }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class PositionsController < ApplicationController
     @work.destroy!
 
     respond_to do |format|
-      format.html { redirect_to works_path, status: :see_other, notice: "Work was successfully destroyed." }
+      format.html { redirect_to works_path, status: :see_other, notice: "Position was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -60,7 +60,7 @@ class PositionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_work
-      @work = Work.find(params.expect(:id))
+      @work = Position.find(params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.
