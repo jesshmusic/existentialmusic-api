@@ -13,30 +13,30 @@
     <%= form.label :technology_ids, "Technologies", class: "block text-sm font-medium text-gray-700" %>
     <%= form.collection_select :technology_ids, Technology.all, :id, :name,
                                { prompt: "Select technologies" },
-                               {
-                                 multiple: true,
-                                 class: "mt-1 block w-full rounded-md border border-gray-300 bg-white shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                               } %>
+                               id: "technology_ids",
+                               multiple: true,
+                               data: { controller: "select" }
+                                %>
   </div>
 
   <div>
     <%= form.label :client_ids, "Clients", class: "block text-sm font-medium text-gray-700" %>
     <%= form.collection_select :client_ids, Client.all, :id, :name,
                                { prompt: "Select clients" },
-                               {
-                                 multiple: true,
-                                 class: "mt-1 block w-full rounded-md border border-gray-300 bg-white shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                               } %>
+                               id: "client_ids",
+                               multiple: true,
+                               data: { controller: "select" }
+                                %>
   </div>
 
   <div>
     <%= form.label :dev_project_ids, "Projects", class: "block text-sm font-medium text-gray-700" %>
     <%= form.collection_select :dev_project_ids, DevProject.all, :id, :title,
                                { prompt: "Select projects" },
-                               {
-                                 multiple: true,
-                                 class: "mt-1 block w-full rounded-md border border-gray-300 bg-white shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                               } %>
+                               id: "dev_project_ids",
+                               multiple: true,
+                               data: { controller: "select" }
+                                %>
   </div>
 
   <div>

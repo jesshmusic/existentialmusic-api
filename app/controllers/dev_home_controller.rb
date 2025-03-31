@@ -31,7 +31,14 @@ class DevHomeController < ApplicationController
   end
 
   def dev_home_params
-    params.require(:dev_home).permit(:headline, :background_image, :call_to_action)
+    params.require(:dev_home).permit(
+      :title,
+      :description,
+      technology_ids: [],
+      client_ids: [],
+      dev_project_ids: []
+    )
   end
+
 end
 
