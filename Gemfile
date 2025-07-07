@@ -65,6 +65,6 @@ gem "aws-sdk-s3", "~> 1.182"
 
 gem "tailwindcss-ruby", "~> 4.0"
 
-gem "tailwindcss-rails", "~> 4.2"
+gem "tailwindcss-rails", "~> 4.3"
 
 gem "foreman", require: false
