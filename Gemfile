@@ -61,7 +61,7 @@ group :test do
 end
 
 gem "bcrypt", "~> 3.1"
-gem "aws-sdk-s3", "~> 1.182"
+gem "aws-sdk-s3", "~> 1.200"
 
 gem "tailwindcss-ruby", "~> 4.0"
 
